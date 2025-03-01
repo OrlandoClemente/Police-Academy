@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html :class="{'dark': darkMode === 'dark' || (darkMode === 'system' &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)}" class="scroll-smooth" data-content_root="./" lang="uk-UA" x-data="{ darkMode: localStorage.getItem('darkMode') || localStorage.setItem('darkMode', 'system'), activeSection: '' }" x-init="$watch('darkMode', val =&gt; localStorage.setItem('darkMode', val))">
+<head>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Процес затримання та арешту | Police Academy LSPD 1.0 documentation</title>
+<meta content="Процес затримання та арешту | Police Academy LSPD 1.0 documentation" property="og:title"/>
+<meta content="Процес затримання та арешту | Police Academy LSPD 1.0 documentation" name="twitter:title"/>
+<link href="_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
+<link href="_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
+<link href="_static/custom.css?v=011097e1" rel="stylesheet" type="text/css"/>
+<link href="search.html" rel="search" title="Пошук"/>
+<link href="genindex.html" rel="index" title="Індекс"/>
+<link href="jurisdiction_of_crimes_and_transfer_of_case.html" rel="next" title="Юрисдикція Злочинів"/>
+<link href="the_process_of_being_charged_with_an_administrative_offense.html" rel="prev" title="Процес притягнення до адміністративної відповідальності"/>
+<script>
+    <!-- Prevent Flash of wrong theme -->
+      const userPreference = localStorage.getItem('darkMode');
+      let mode;
+      if (userPreference === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        mode = 'dark';
+        document.documentElement.classList.add('dark');
+      } else {
+        mode = 'light';
+      }
+      if (!userPreference) {localStorage.setItem('darkMode', mode)}
+    </script>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-sm border-border supports-backdrop-blur:bg-background/60 bg-background/95 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Police Academy LSPD 1.0 documentation</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 space-x-2 sm:space-x-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center space-x-1">
+<button @click="darkMode = darkMode === 'light' ? 'dark' : 'light'" aria-label="Color theme switcher" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full shrink-0 overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="!justify-start text-sm md:!hidden bg-background" href="index.html"><span class="font-bold text-clip whitespace-nowrap">Police Academy LSPD 1.0 documentation</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0 h-[calc(100vh-8rem)] md:h-auto">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<p class="caption" role="heading"><span class="caption-text">Зміст</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Вступ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_stop.html">Траффік-Стоп</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identification_procedure.html">Процедура встановлення особи</a></li>
+<li class="toctree-l1"><a class="reference internal" href="the_process_of_being_charged_with_an_administrative_offense.html">Процес притягнення до адміністративної відповідальності</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Процес затримання та арешту</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jurisdiction_of_crimes_and_transfer_of_case.html">Юрисдикція Злочинів</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="index.html">
+<span class="hidden md:inline">Police Academy LSPD 1.0 documentation</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Процес затримання та арешту</span>
+</nav>
+<div id="content" role="main">
+<section id="id1">
+<h1>Процес затримання та арешту<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h1>
+<p><strong>Затримання</strong> – це короткочасне позбавлення особи права на свободу, що здійснюється на підставі Розділу II відповідного кодексу. Затримання не є мірою покарання та має виключно позасудовий характер. Воно дозволяє співробітникам правоохоронних органів зібрати необхідну доказову базу для визначення можливості притягнення особи до відповідальності.</p>
+<section id="id2">
+<h2>Підстави для Затримання<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'">¶</a></h2>
+<p>Особа може бути затримана за підозрою у скоєнні злочину, за який передбачено позбавлення волі або штрафні санкції, за наявності хоча б однієї з таких підстав:</p>
+<ol class="arabic simple">
+<li><p><strong>Затримання на місці злочину або одразу після вчинення злочину.</strong><br/>
+Якщо особу було затримано співробітником правоохоронних органів під час вчинення злочину чи безпосередньо після нього.</p></li>
+<li><p><strong>Явні сліди злочину на особі чи в її помешканні.</strong><br/>
+Якщо на одязі, особистих речах чи в житлі особи виявлено очевидні ознаки, пов’язані зі злочином.</p></li>
+<li><p><strong>Наявність відеофіксації.</strong><br/>
+Якщо існує відеозапис, що підтверджує факт учинення злочину затриманою особою.</p></li>
+<li><p><strong>Наявність нормативного документа або указу уповноваженої особи чи суду.</strong><br/>
+Якщо затримання здійснюється на підставі офіційного розпорядження.</p></li>
+<li><p><strong>Перебування особи в розшуку.</strong><br/>
+Якщо особа оголошена в розшук і має бути затримана відповідно до чинного законодавства.</p></li>
+</ol>
+</section>
+<hr class="docutils"/>
+<section id="id3">
+<h2>Загальний Регламент Затримання та Арешту<a class="headerlink" href="#id3" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id3'">¶</a></h2>
+<p>Нижче подано офіційну схему дій правоохоронних органів та залучених осіб під час процесу затримання та подальшого арешту. Усі процедури регламентовані внутрішніми статутами та відповідним законодавством.</p>
+</section>
+<hr class="docutils"/>
+<section id="id4">
+<h2>Стадія 1: Початок<a class="headerlink" href="#id4" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id4'">¶</a></h2>
+<section id="id5">
+<h3>1. Надягнення наручників<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Підстави:</strong> забезпечення безпеки під час процесу затримання.</p></li>
+<li><p><strong>Дії:</strong></p>
+<ul class="simple">
+<li><p>Співробітник правоохоронних органів надягає наручники на підозрюваного.</p></li>
+<li><p>Повідомляє підозрюваному, що відбувається його офіційне затримання.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h3>2. Представлення<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Обов’язок службовця:</strong></p>
+<ul class="simple">
+<li><p>Назвати своє прізвище.</p></li>
+<li><p>Вказати державну організацію, у якій він працює.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id7">
+<h3>3. Озвучення статей порушення<a class="headerlink" href="#id7" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id7'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Мета:</strong> повідомити затриманому, у вчиненні яких правопорушень (за якими статтями Кримінального кодексу або іншими нормами) він підозрюється.</p></li>
+<li><p><strong>Зміст:</strong></p>
+<ul class="simple">
+<li><p>Короткий опис суті порушення.</p></li>
+<li><p>Пояснення, як дії затриманого підпадають під порушення вказаних статей.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="id8">
+<h2>Стадія 2: Транспортування<a class="headerlink" href="#id8" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id8'">¶</a></h2>
+<section id="id9">
+<h3>4. Озвучення прав затриманого<a class="headerlink" href="#id9" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id9'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Права:</strong>  Ви затримані. Усе, що ви скажете, може і буде використано проти вас. Ви маєте право зберігати мовчання, право на адвоката та/або на один телефонний дзвінок. Вам зрозумілі ваші права?</p></li>
+</ol>
+</section>
+<section id="id10">
+<h3>5. Переміщення до КПЗ<a class="headerlink" href="#id10" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id10'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Дії:</strong></p>
+<ul class="simple">
+<li><p>Затриманого поміщають у спеціальний транспорт.</p></li>
+<li><p>Доставляють до Камери Попереднього Затримання (КПЗ).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id11">
+<h3>6. Перевірка працевлаштування<a class="headerlink" href="#id11" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id11'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Мета:</strong> встановити, чи є затриманий працівником державної служби.</p></li>
+<li><p><strong>Процедура:</strong></p>
+<ul class="simple">
+<li><p>Уточнення статусу безпосередньо у затриманого.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id12">
+<h3>7. Первинний обшук<a class="headerlink" href="#id12" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id12'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Призначення:</strong> виявлення холодної або вогнепальної зброї.</p></li>
+<li><p><strong>Особливість:</strong></p>
+<ul class="simple">
+<li><p>У випадку виявлення зброї вона вилучається.</p></li>
+<li><p><strong>Примітка:</strong> для державних службовців обшук <strong>заборонено</strong> проводити до стадії арешту (крім випадків, коли необхідно гарантувати безпеку).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id13">
+<h3>8. Встановлення особи<a class="headerlink" href="#id13" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id13'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Дії:</strong></p>
+<ul class="simple">
+<li><p>Звірка особи із наявними базами (фотороботи, документи).</p></li>
+<li><p>За потреби зняття предметів, що приховують обличчя.</p></li>
+<li><p>Робиться скріншот із бази даних (планшет) та фотографія затриманого (<em>фоторобот</em>).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id14">
+<h3>9. Внесення в базу розшуку<a class="headerlink" href="#id14" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id14'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Мета:</strong> офіційне внесення даних про затриманого до бази розшукуваних осіб (якщо є підстави або вже існуючі дані).</p></li>
+</ol>
+</section>
+<section id="id15">
+<h3>Передача уповноваженим органам<a class="headerlink" href="#id15" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id15'">¶</a></h3>
+<p>Якщо державні службовці, що здійснюють затримання, <strong>не уповноважені</strong> продовжувати процес або застосовувати відповідні санкції, <strong>вони зобов’язані довести процес до завершення 2-ї стадії</strong> та передати затриманого уповноваженим правоохоронним органам.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="id16">
+<h2>Стадія 3: Реалізація прав і додаткове розслідування<a class="headerlink" href="#id16" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id16'">¶</a></h2>
+<section id="id17">
+<h3>10. Надання прав затриманому<a class="headerlink" href="#id17" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id17'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Права, які реалізуються:</strong></p>
+<ul class="simple">
+<li><p>Виклик адвоката.</p></li>
+<li><p>Телефонний дзвінок.</p></li>
+<li><p>Медична допомога тощо.</p></li>
+</ul>
+</li>
+<li><p><strong>Процедура виклику адвоката та телефонного дзвінка:</strong></p>
+<ul class="simple">
+<li><p>За запитом затриманого викликається адвокат.</p>
+<ul>
+<li><p>Час очікування відповіді адвоката — <strong>до 3 хвилин</strong>.</p></li>
+<li><p>У разі позитивної відповіді — очікування може продовжитись ще <strong>на 5 хвилин</strong>.</p></li>
+</ul>
+</li>
+<li><p>Якщо адвокат не може прибути або відсутній, затриманий отримує право на телефонний дзвінок до <strong>2 хвилин</strong>.</p>
+<ul>
+<li><p>Дзвінок здійснюється з <strong>особистого телефону</strong> затриманого (якщо такий є).</p></li>
+<li><p>Якщо телефону немає або недостатньо коштів, <strong>службовець зобов’язаний</strong> здійснити дзвінок самостійно за вказаним номером і повідомити про місце знаходження та факт затримання.</p></li>
+</ul>
+</li>
+<li><p>За запитом адвоката або затриманого надається <strong>конфіденційна бесіда</strong> (до <strong>5 хвилин</strong>) в ізольованому приміщенні.</p></li>
+</ul>
+</li>
+<li><p><strong>Процедура виклику прокурора:</strong></p>
+<ul class="simple">
+<li><p>Якщо після конфіденційної бесіди адвокат вважає, що є підстави для звільнення затриманого, він може викликати прокурора.</p>
+<ul>
+<li><p>Час очікування відповіді — <strong>5 хвилин</strong>.</p></li>
+<li><p>У разі позитивної відповіді — додатково очікують <strong>10 хвилин</strong>.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Особливості затримання державних службовців:</strong></p>
+<ul class="simple">
+<li><p>Викликається керівник затриманого та прокурор.</p>
+<ul>
+<li><p>Час очікування відповіді — <strong>10 хвилин</strong>.</p></li>
+<li><p>За позитивної відповіді — ще <strong>10 хвилин</strong>.</p></li>
+</ul>
+</li>
+<li><p>Керівник та прокурор, які прибули, <strong>зобов’язані ознайомитися</strong> з усіма матеріалами справи та прийняти рішення про подальші дії.</p></li>
+<li><p>Якщо затримання викликане рішенням суду, присутність керівника та прокуратури <strong>не обов’язкова</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Конфіскація державного спорядження (для держслужбовців):</strong></p>
+<ul class="simple">
+<li><p>Якщо правопорушення державного службовця визнано, керівництво <strong>конфіскує</strong> державне спорядження.</p></li>
+<li><p>У разі відсутності керівництва конфіскацію проводить співробітник, який здійснює процесуальні дії, із <strong>обов’язковим повідомленням</strong> керівництва.</p></li>
+</ul>
+</li>
+<li><p><strong>Рішення про звільнення:</strong></p>
+<ul class="simple">
+<li><p>Приймається <strong>прокурором</strong>.</p></li>
+<li><p>Має бути <strong>вмотивованим</strong> та обґрунтованим.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="id18">
+<h2>Стадія 4: Процедура арешту<a class="headerlink" href="#id18" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id18'">¶</a></h2>
+<section id="id19">
+<h3>11. Вторинний обшук<a class="headerlink" href="#id19" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id19'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Призначення:</strong> повторно вилучити всі заборонені предмети та речі, що можуть становити небезпеку для оточення в місцях несвободи.</p></li>
+<li><p><strong>Проведення:</strong></p>
+<ul class="simple">
+<li><p>Ретельний огляд особи та речей затриманого.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id20">
+<h3>12. Оновлення розшукових даних<a class="headerlink" href="#id20" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id20'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Якщо є потреба:</strong></p>
+<ul class="simple">
+<li><p>Коригується рівень розшуку або статус затриманого у базах даних.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id21">
+<h3>13. Озвучення інкримінованих злочинів<a class="headerlink" href="#id21" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id21'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Мета:</strong> повторно чітко повідомити затриманому статті чи види злочинів, за якими його обвинувачують (інкримінують).</p></li>
+<li><p><strong>Дії:</strong></p>
+<ul class="simple">
+<li><p>Офіційне проголошення переліку порушень перед фінальним арештом.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id22">
+<h3>14. Розподіл по місцях відбування покарання<a class="headerlink" href="#id22" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id22'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Дії:</strong></p>
+<ul class="simple">
+<li><p>Особу розподіляють до  камери позбавлення волі (та через функціонал проводиться арешт).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="database">
+<h3>15. Заповнення Database<a class="headerlink" href="#database" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#database'">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Фінальний етап:</strong></p>
+<ul class="simple">
+<li><p>Внесення всієї необхідної інформації про затримання та арешт до офіційних баз даних (Database).</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils"/>
+<p><strong>Більш детальніше можна ознайомитись у <a class="reference external" href="https://forum.ukraine-gta5.com.ua/index.php?threads/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D0%BA%D0%BE%D0%B4%D0%B5%D0%BA%D1%81.197/">Процесуальному кодексі</a></strong></p>
+</section>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">Підстави для Затримання</a></li>
+<li><a :data-current="activeSection === '#id3'" class="reference internal" href="#id3">Загальний Регламент Затримання та Арешту</a></li>
+<li><a :data-current="activeSection === '#id4'" class="reference internal" href="#id4">Стадія 1: Початок</a><ul>
+<li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">1. Надягнення наручників</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">2. Представлення</a></li>
+<li><a :data-current="activeSection === '#id7'" class="reference internal" href="#id7">3. Озвучення статей порушення</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id8'" class="reference internal" href="#id8">Стадія 2: Транспортування</a><ul>
+<li><a :data-current="activeSection === '#id9'" class="reference internal" href="#id9">4. Озвучення прав затриманого</a></li>
+<li><a :data-current="activeSection === '#id10'" class="reference internal" href="#id10">5. Переміщення до КПЗ</a></li>
+<li><a :data-current="activeSection === '#id11'" class="reference internal" href="#id11">6. Перевірка працевлаштування</a></li>
+<li><a :data-current="activeSection === '#id12'" class="reference internal" href="#id12">7. Первинний обшук</a></li>
+<li><a :data-current="activeSection === '#id13'" class="reference internal" href="#id13">8. Встановлення особи</a></li>
+<li><a :data-current="activeSection === '#id14'" class="reference internal" href="#id14">9. Внесення в базу розшуку</a></li>
+<li><a :data-current="activeSection === '#id15'" class="reference internal" href="#id15">Передача уповноваженим органам</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id16'" class="reference internal" href="#id16">Стадія 3: Реалізація прав і додаткове розслідування</a><ul>
+<li><a :data-current="activeSection === '#id17'" class="reference internal" href="#id17">10. Надання прав затриманому</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#id18'" class="reference internal" href="#id18">Стадія 4: Процедура арешту</a><ul>
+<li><a :data-current="activeSection === '#id19'" class="reference internal" href="#id19">11. Вторинний обшук</a></li>
+<li><a :data-current="activeSection === '#id20'" class="reference internal" href="#id20">12. Оновлення розшукових даних</a></li>
+<li><a :data-current="activeSection === '#id21'" class="reference internal" href="#id21">13. Озвучення інкримінованих злочинів</a></li>
+<li><a :data-current="activeSection === '#id22'" class="reference internal" href="#id22">14. Розподіл по місцях відбування покарання</a></li>
+<li><a :data-current="activeSection === '#database'" class="reference internal" href="#database">15. Заповнення Database</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2025, Police Academy LSPD Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 8.1.3</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script src="_static/documentation_options.js?v=bdfcca4f"></script>
+<script src="_static/doctools.js?v=9bcbadda"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script defer="defer" src="_static/theme.js?v=073f68d9"></script>
+<script src="_static/translations.js?v=0958edf7"></script>
+</body>
+</html>
